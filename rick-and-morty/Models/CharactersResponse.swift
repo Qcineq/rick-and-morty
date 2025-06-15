@@ -8,5 +8,13 @@
 import Foundation
 
 struct CharactersResponse: Decodable {
+    let info: PageInfo
     let results: [Character]
+}
+
+struct PageInfo: Decodable {
+    let count: Int
+    let pages: Int
+    let next: String?
+    let prev: String?
 }

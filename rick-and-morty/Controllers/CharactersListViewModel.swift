@@ -15,15 +15,24 @@ class CharactersListViewModel: ObservableObject {
     @Published var hasLoaded = false
 
     func loadCharacters() async {
-        isLoading = true
-        errorMessage = nil
-        do {
-            characters = try await APIClient.shared.fetchCharacters()
-            hasLoaded = true
-        } catch {
-            errorMessage = "Błąd podczas pobierania danych."
+        DispatchQueue.main.async {
+            self.isLoading = true
+            self.errorMessage = nil
         }
-        isLoading = false
+
+        do {
+            let fetched = try await APIClient.shared.fetchAllCharacters()
+            DispatchQueue.main.async {
+                self.characters = fetched
+                self.hasLoaded = true
+                self.isLoading = false
+            }
+        } catch {
+            DispatchQueue.main.async {
+                self.errorMessage = "Error loading characters."
+                self.isLoading = false
+            }
+        }
     }
 
     func reset() {

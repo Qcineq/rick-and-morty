@@ -11,43 +11,68 @@ struct EpisodeDetailsView: View {
     let episode: Episode
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 20) {
-            VStack(alignment: .leading, spacing: 6) {
-                Text("Name: \(episode.name)")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                Text("Episode Code: \(episode.episode)")
-                    .font(.headline)
-                    .foregroundColor(.secondary)
-            }
-            .padding()
-            .background(
-                RoundedRectangle(cornerRadius: 16)
-                    .fill(Color.blue.opacity(0.1))
-            )
-
-            HStack(spacing: 16) {
-                Label("Air Date", systemImage: "calendar")
+        ScrollView {
+            VStack(spacing: 24) {
+                VStack(alignment: .leading, spacing: 12) {
+                    Text(episode.name)
+                        .font(.system(size: 28, weight: .bold))
+                        .foregroundColor(.primary)
+                    
+                    Text(episode.episode)
+                        .font(.headline)
+                        .foregroundColor(.secondary)
+                    
+                    Divider()
+                    
+                    HStack {
+                        Image(systemName: "calendar")
+                        Text("Data emisji:")
+                        Spacer()
+                        Text(episode.air_date)
+                            .fontWeight(.semibold)
+                    }
                     .foregroundColor(.gray)
-                Spacer()
-                Text(episode.air_date)
-                    .fontWeight(.medium)
-            }
-            .padding(.horizontal)
-
-            HStack(spacing: 16) {
-                Label("Characters", systemImage: "person.3.fill")
+                    
+                    HStack {
+                        Image(systemName: "person.3.fill")
+                        Text("Liczba postaci:")
+                        Spacer()
+                        Text("\(episode.characters.count)")
+                            .fontWeight(.semibold)
+                    }
                     .foregroundColor(.gray)
-                Spacer()
-                Text("\(episode.characters.count)")
-                    .fontWeight(.medium)
+                    
+                }
+                .padding()
+                .background(
+                    RoundedRectangle(cornerRadius: 20)
+                        .fill(LinearGradient(
+                            gradient: Gradient(colors: [Color.blue.opacity(0.2), Color.purple.opacity(0.2)]),
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing)
+                        )
+                        .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 6)
+                )
+                .padding(.horizontal)
             }
-            .padding(.horizontal)
-
-            Spacer()
+            .padding(.vertical)
         }
-        .padding()
-        .navigationTitle("Episode Details")
+        .navigationTitle("Szczegóły odcinka")
         .navigationBarTitleDisplayMode(.inline)
+        .background(Color(.systemGroupedBackground).ignoresSafeArea())
+    }
+}
+
+#Preview {
+    NavigationView {
+        EpisodeDetailsView(
+            episode: Episode(
+                id: 1,
+                name: "Pilot",
+                air_date: "December 2, 2013",
+                episode: "S01E01",
+                characters: Array(repeating: "https://rickandmortyapi.com/api/character/1", count: 10)
+            )
+        )
     }
 }

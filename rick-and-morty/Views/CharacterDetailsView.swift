@@ -13,36 +13,64 @@ struct CharacterDetailsView: View {
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 12) {
+            VStack(spacing: 20) {
                 AsyncImage(url: URL(string: character.image)) { image in
                     image.resizable()
+                        .aspectRatio(contentMode: .fill)
                 } placeholder: {
-                    Color.gray
+                    Color.gray.opacity(0.3)
                 }
-                .frame(height: 250)
-                .cornerRadius(10)
+                .frame(height: 260)
+                .clipped()
+                .cornerRadius(20)
+                .shadow(radius: 6)
+                .padding(.horizontal)
 
-                Group {
-                    Text("Name: \(character.name)")
-                    Text("Status: \(character.status)")
-                    Text("Gender: \(character.gender)")
-                    Text("Origin: \(character.origin.name)")
-                    Text("Location: \(character.location.name)")
+                VStack(alignment: .leading, spacing: 8) {
+                    Text(character.name)
+                        .font(.title)
+                        .fontWeight(.bold)
+                    HStack {
+                        Label(character.status, systemImage: "waveform.path.ecg")
+                        Label(character.gender, systemImage: "person.fill")
+                    }
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+
+                    Divider()
+
+                    VStack(alignment: .leading, spacing: 6) {
+                        Label("Origin: \(character.origin.name)", systemImage: "globe")
+                        Label("Location: \(character.location.name)", systemImage: "mappin.and.ellipse")
+                    }
+                    .font(.subheadline)
                 }
                 .padding(.horizontal)
 
                 Divider()
-                Text("Odcinki:")
-                    .font(.headline)
-                    .padding(.horizontal)
 
-                ForEach(episodes) { episode in
-                    NavigationLink(destination: EpisodeDetailsView(episode: episode)) {
-                        Text("Odcinek \(episode.episode)")
-                            .padding(.horizontal)
+                VStack(alignment: .leading, spacing: 12) {
+                    Text("Episodes")
+                        .font(.title3)
+                        .fontWeight(.semibold)
+                    ForEach(episodes) { episode in
+                        NavigationLink(destination: EpisodeDetailsView(episode: episode)) {
+                            HStack {
+                                Text("Odcinek: \(episode.episode) - \(episode.name)")
+                                    .font(.subheadline)
+                                Spacer()
+                                Image(systemName: "chevron.right")
+                                    .foregroundColor(.gray)
+                            }
+                            .padding()
+                            .background(Color(.systemGray6))
+                            .cornerRadius(10)
+                        }
                     }
                 }
+                .padding(.horizontal)
             }
+            .padding(.top)
             .task {
                 await loadEpisodes()
             }
@@ -72,3 +100,24 @@ struct CharacterDetailsView: View {
         }
     }
 }
+
+#Preview {
+    NavigationView {
+        CharacterDetailsView(
+            character: Character(
+                id: 1,
+                name: "Rick Sanchez",
+                status: "Alive",
+                species: "Human",
+                gender: "Male",
+                origin: Origin(name: "Earth (C-137)"),
+                location: Location(name: "Citadel of Ricks"),
+                image: "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+                episode: [
+                    "https://rickandmortyapi.com/api/episode/1",
+                    "https://rickandmortyapi.com/api/episode/2"
+                ]
+            )
+        )
+    }
+    }

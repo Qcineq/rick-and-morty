@@ -83,6 +83,13 @@ rick-and-morty/
 
 ---
 
+## 📱  Screenshots
+
+![App](rick-and-morty/Assets.xcassets/ReadMeImage.imageset/ReadMeImage.png)
+*Screenshot: Main Screen, Character List, Character Detailed View, Episode View.*
+
+---
+
 ## 🔗 API
 
 This app uses the public Rick and Morty REST API:

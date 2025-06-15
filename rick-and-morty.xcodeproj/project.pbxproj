@@ -6,17 +6,24 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		5E61E4DE2DFE1863009E6C1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E61E4DA2DFE1863009E6C1D /* Assets.xcassets */; };
+		5E61E4DF2DFE1863009E6C1D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E61E4DB2DFE1863009E6C1D /* ContentView.swift */; };
+		5E61E4E02DFE1863009E6C1D /* rick_and_mortyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E61E4DC2DFE1863009E6C1D /* rick_and_mortyApp.swift */; };
+		5E61E4E72DFEDF2F009E6C1D /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E61E4E62DFEDF2F009E6C1D /* Character.swift */; };
+		5E61E4E92DFEE60B009E6C1D /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E61E4E82DFEE60B009E6C1D /* Episode.swift */; };
+		5E61E4EB2DFEE61F009E6C1D /* CharactersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E61E4EA2DFEE61F009E6C1D /* CharactersResponse.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		5E61E4CC2DFE169A009E6C1D /* rick-and-morty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rick-and-morty.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E61E4DA2DFE1863009E6C1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5E61E4DB2DFE1863009E6C1D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5E61E4DC2DFE1863009E6C1D /* rick_and_mortyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rick_and_mortyApp.swift; sourceTree = "<group>"; };
+		5E61E4E62DFEDF2F009E6C1D /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		5E61E4E82DFEE60B009E6C1D /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
+		5E61E4EA2DFEE61F009E6C1D /* CharactersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		5E61E4CE2DFE169A009E6C1D /* rick-and-morty */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "rick-and-morty";
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		5E61E4C92DFE169A009E6C1D /* Frameworks */ = {
@@ -32,7 +39,7 @@
 		5E61E4C32DFE1699009E6C1D = {
 			isa = PBXGroup;
 			children = (
-				5E61E4CE2DFE169A009E6C1D /* rick-and-morty */,
+				5E61E4DD2DFE1863009E6C1D /* rick-and-morty */,
 				5E61E4CD2DFE169A009E6C1D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +50,43 @@
 				5E61E4CC2DFE169A009E6C1D /* rick-and-morty.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		5E61E4DD2DFE1863009E6C1D /* rick-and-morty */ = {
+			isa = PBXGroup;
+			children = (
+				5E61E4DC2DFE1863009E6C1D /* rick_and_mortyApp.swift */,
+				5E61E4E12DFEDDAB009E6C1D /* Models */,
+				5E61E4E22DFEDDB5009E6C1D /* Views */,
+				5E61E4E32DFEDDBF009E6C1D /* Controllers */,
+				5E61E4DA2DFE1863009E6C1D /* Assets.xcassets */,
+			);
+			path = "rick-and-morty";
+			sourceTree = "<group>";
+		};
+		5E61E4E12DFEDDAB009E6C1D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5E61E4E62DFEDF2F009E6C1D /* Character.swift */,
+				5E61E4E82DFEE60B009E6C1D /* Episode.swift */,
+				5E61E4EA2DFEE61F009E6C1D /* CharactersResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5E61E4E22DFEDDB5009E6C1D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5E61E4DB2DFE1863009E6C1D /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5E61E4E32DFEDDBF009E6C1D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,9 +103,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				5E61E4CE2DFE169A009E6C1D /* rick-and-morty */,
 			);
 			name = "rick-and-morty";
 			packageProductDependencies = (
@@ -109,6 +150,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E61E4DE2DFE1863009E6C1D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +161,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E61E4DF2DFE1863009E6C1D /* ContentView.swift in Sources */,
+				5E61E4E92DFEE60B009E6C1D /* Episode.swift in Sources */,
+				5E61E4E02DFE1863009E6C1D /* rick_and_mortyApp.swift in Sources */,
+				5E61E4E72DFEDF2F009E6C1D /* Character.swift in Sources */,
+				5E61E4EB2DFEE61F009E6C1D /* CharactersResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +308,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -289,6 +337,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

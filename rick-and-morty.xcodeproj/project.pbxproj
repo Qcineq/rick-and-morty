@@ -16,6 +16,7 @@
 		5E61E4ED2DFEE7D7009E6C1D /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E61E4EC2DFEE7D7009E6C1D /* APIClient.swift */; };
 		5E61E4EF2DFEE904009E6C1D /* CharactersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E61E4EE2DFEE904009E6C1D /* CharactersListViewModel.swift */; };
 		5E61E4F12DFEEBDD009E6C1D /* CharacterDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E61E4F02DFEEBDD009E6C1D /* CharacterDetailsView.swift */; };
+		5E61E4F32DFEF263009E6C1D /* EpisodeDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E61E4F22DFEF263009E6C1D /* EpisodeDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		5E61E4EC2DFEE7D7009E6C1D /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		5E61E4EE2DFEE904009E6C1D /* CharactersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListViewModel.swift; sourceTree = "<group>"; };
 		5E61E4F02DFEEBDD009E6C1D /* CharacterDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsView.swift; sourceTree = "<group>"; };
+		5E61E4F22DFEF263009E6C1D /* EpisodeDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			children = (
 				5E61E4DB2DFE1863009E6C1D /* CharactersListView.swift */,
 				5E61E4F02DFEEBDD009E6C1D /* CharacterDetailsView.swift */,
+				5E61E4F22DFEF263009E6C1D /* EpisodeDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				5E61E4E02DFE1863009E6C1D /* rick_and_mortyApp.swift in Sources */,
 				5E61E4E72DFEDF2F009E6C1D /* Character.swift in Sources */,
 				5E61E4EB2DFEE61F009E6C1D /* CharactersResponse.swift in Sources */,
+				5E61E4F32DFEF263009E6C1D /* EpisodeDetailsView.swift in Sources */,
 				5E61E4ED2DFEE7D7009E6C1D /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
